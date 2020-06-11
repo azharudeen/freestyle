@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+    <title>RBC Travels</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+   
+
+    <!-- Favicons -->
+     <link rel="shortcut icon" type="image/png" href="" alt="ceatr Logo" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+     
+    <!-- Bootstrap CSS File -->
+    <!--build:css css/bootsrap.min.css -->
+   
+    <!-- endbuild -->
+
+     <!--build:css css/animate.min.css -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <!-- endbuild -->
+
+     <!--build:css css/fontawesome.min.css -->
+   
+    <!-- endbuild -->
+    
+     <!--build:css css/magnific.min.css -->
+    <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <!-- endbuild -->
+
+    <!--build:css css/styles.min.css -->
+	<link href="css/styles.css" rel="stylesheet">
+     <!-- endbuild -->
+
+    <!--build:css css/plugins.min.css -->
+	<link href="css/plugins.css" rel="stylesheet">
+    <!-- endbuild -->
+
+    <!--build:css css/slick.min.css -->
+	<link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+     <!-- endbuild -->
+
+  
+   <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+     
+     
+  <script src="js/javascript.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css"
+  />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125115139-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-125115139-1');
+</script>
+<meta name="google-site-verification" content="eOw4g3YSmwFfo093nawcSbPPnfYfxP8eAp5cuZE6apU" />
+  <style>
+     html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #map-canvas {
+        height: 100%;
+        width: 50%;
+      }
+      #content-pane {
+        float:right;
+        width:48%;
+        padding-left: 2%;
+      }
+      #outputDiv {
+        font-size: 11px;
+      }
+	  
+	  .grid {
+	position: relative;
+	clear: both;
+	margin: 0 auto;
+	padding: 1em 0 4em;
+	max-width: 1000px;
+	list-style: none;
+	text-align: center;
+}
+
+/* Common style */
+.grid figure {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	margin: 10px 1%;
+	min-width: 320px;
+	max-width: 480px;
+	max-height: 360px;
+	width: 48%;
+	height: auto;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+	height: 300px;
+}
+
+.grid figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 0.8;
+}
+
+.grid figure figcaption {
+	padding: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.grid figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+
+.grid figure h2 span {
+	font-weight: 800;
+}
+
+.grid figure h2,
+.grid figure p {
+	margin: 0;
+}
+
+.grid figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+figure.effect-apollo {
+	background: #3498db;
+}
+
+figure.effect-apollo img {
+	opacity: 0.95;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale3d(1.05,1.05,1);
+	transform: scale3d(1.05,1.05,1);
+}
+
+figure.effect-apollo figcaption::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,0.5);
+	content: '';
+	-webkit-transition: -webkit-transform 0.6s;
+	transition: transform 0.6s;
+	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
+	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
+}
+
+figure.effect-apollo p {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin-bottom: 3em;
+	padding:10px 15px;
+	background:#000;
+	max-width: 100%;
+	border-right: 4px solid #fff;
+	text-align: right;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s;
+	transition: opacity 0.35s;
+}
+
+figure.effect-apollo h2 {
+	text-align: left;
+}
+
+figure.effect-apollo:hover img {
+	opacity: 0.6;
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+}
+
+figure.effect-apollo:hover figcaption::before {
+	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+}
+
+figure.effect-apollo:hover p {
+	opacity: 1;
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+   
+    background-color: #000000;
+    background-size: 60% ;
+    padding: 25px;
+    border-radius: 50%;
+}
+
+@media (max-width: 817px) {
+	.grid a{
+		display: flex;
+    flex-direction: column;
+    align-items: center;
+	}
+	}
+.form-desk{
+    position: absolute;
+    top: 23%;
+    right: 11%;
+	background: rgba(0, 0, 0, 0.5);
+    padding-bottom: 15px;
+}
+.form-mobile{
+   display:none;
+}
+ .pricing-item {
+    padding: 20px 15px;
+     font-size: 16px;
+	 height: 480px;
+}
+.btn-get {
+    
+    padding: 8px 25px;
+ 
+}
+a,a:hover,a:focus{
+  text-decoration:none;
+}
+.pricing-item img{height: 130px;}
+.h5, h5 {
+    font-size: 0.9rem;
+}
+.nav-item .nav-link{
+    color: #38edba;
+}
+.pricing-item:hover .btn-get {
+    color: white !important;
+    background: #38edba;
+}
+.btn-get:hover {
+    color:white !important;
+}
+.btn-get {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px;
+    border: 2px solid #38edba;
+    color: #38edba !important;
+    background: #ffffff;
+    font-weight: 500;
+}
+.nav-link{
+    border-radius: 25px 25px 0px 0px !important;
+    box-shadow: 0px 1px 5px 0px #ccc;
+	padding: .5rem 1.4rem;
+	}
+	.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #38edba;
+}
+.tab-pane{     border: 1px solid rgba(204, 204, 204, 0.61);padding-bottom:15px;}
+  </style>
+     <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("user_1Atr8eLgw0JL70SNnIk1f");
+    })();
+  </script>
+
+  <script>
+    function sendEmail() {
+      var fname = document.getElementById('fname').value;
+      var email = document.getElementById('email').value;
+      var msgToSend = document.getElementById('message_to_send').value;
+      var service_id = 'default_service';
+      var template_id = 'template_Ph8Wr470';
+      var template_params = {
+        name: fname,
+        reply_email: email,
+        message: msgToSend
+      };
+
+      emailjs.send(service_id, template_id, template_params);
+    }
+  </script>
+  
+</head>
+<body>
+<div class="call-mail">
+ 	    <div class="container">
+ 	    	<div class="row">
+            <div class="col-sm-12 col-md-6 offset-md-6">
+                <div class="search text-right float-right">
+                        <ul class="nav navbar-upper">
+                  
+                   <li><a href="mailto:rbctravelsmadurai@gmail.com"><i class="fa fa-envelope-o c-m" aria-hidden="true"></i>&nbsp;info@rbctravels.in</a></li>
+                    <li><a href="tel:+91 93603 99003"><i class="fa fa-phone c-m" aria-hidden="true" ></i>&nbsp;+91 93603 99003</a></li>
+               </ul>
+                 </div>
+            </div>
+           </div>
+        </div>
+    </div>
+	<header id="header">
+	    
+        <div class="container">
+            <div id="logo" class="pull-left">
+                <a href="index.html">rbc travels</a>
+            </div>
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                   
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="packages.html">Tour Packages</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <!-- #nav-menu-container -->
+        </div>
+    </header>
+	
+<div id="demo" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+	<li data-target="#demo" data-slide-to="3"></li>
+  </ul>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/madurai-banner.jpg" class="img-fluid" alt="Los Angeles" >
+      <div class="carousel-caption">
+        <h3>Madurai</h3>
+        <p>The Temple Town of India!</p>
+      </div>   
+    </div>
+    <div class="carousel-item">
+      <img src="img/pamban-banner.jpg" class="img-fluid" alt="Chicago" >
+      <div class="carousel-caption">
+        <h3>Rameshwaram</h3>
+        <p>The City of Pamban island !</p>
+      </div>   
+    </div>
+	<div class="carousel-item">
+      <img src="img/thiru.png" class="img-fluid" alt="Los Angeles">
+      <div class="carousel-caption">
+        <h3>Kanyakumari</h3>
+        <p>We had such a great Cape Comorin!</p>
+      </div>   
+    </div>
+    <div class="carousel-item">
+      <img src="img/kodaikanal-banner.jpg" class="img-fluid" alt="New York" >
+      <div class="carousel-caption">
+        <h3>Kodaikanal</h3>
+        <p>We love the Nature!</p>
+      </div>   
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+ <div class="col-sm-3 form-desk  fix-con">
+
+        <form class="contact-form" action="https://formspree.io/enquiry.rbctravels@gmail.com" method="POST">
+
+
+          <h2 class="text-center pt-2 pb-2 color-white">Contact Form</h2>
+          <div class="form-group">
+            <input type="text" class="form-control" id="fname" name="fname" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Mobile Number">
+          </div>
+
+          <div class="form-group">
+            <select class="form-control" name="vehicle_type">
+              <option value="">Select Vehicle</option>
+              <option value="HatchBack">HatchBack</option>
+              <option value="Sedan">Sedan</option>
+              <option value="SUV">SUV</option>
+              <option value="Tempo">Tempo</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <textarea class="form-control" type="textarea" id="message_to_send" name="quote" id="quote" placeholder="Message" maxlength="140"
+              rows="3"></textarea>
+          </div>
+
+          <div class="">
+
+            <!-- <button type="submit" id="submit" name="submit" class="col-sm-6 offset-sm-3 text-center btn btn-primary">Submit</button> -->
+            <input type="submit" class="col-sm-6 offset-sm-3 col-6 offset-3 text-center btn btn-primary" value="Send">
+          </div>
+        </form>
+      </div>
+<div class="col-sm-10 offset-sm-1">
+
+  <h2 class="text-center pt-4">Taxi Tariff</h2>
+  <br>
+  <!-- Nav pills -->
+  <ul class="nav nav-pills" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="pill" href="#home">Outstation Tariff</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#menu1">Local Tariff</a>
+    </li>
+    
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div id="home" class="container-fluid tab-pane active "><br>
+      <div class="col-sm-12 p-0">
+	<div class="row align-items-center">
+	    <div class="col-sm-3">
+		<div class="pricing-item text-center box">
+		  <h5>HatchBack</h5>
+		  <p>Indica or Similar<p>
+		  <img src="img/tata-Indica.png" class="img-fluid">
+		  <div>
+		    <p><span>AC </span> | <span> 4 Seats </span> |  <span> luggage </p>
+		  </div>
+		  <div>
+		    <h5>₹10.5 <span> per KM for HatchBack</span></h5>
+			<h5>₹250 <span>Driver Allowances per Day</span></h5>
+			<h5><span>₹150 </span>Charges for per Night Halt</h5>
+		  </div>
+		 
+		  <a href="#" data-toggle="modal" data-target="#myPrice1" class="btn-get">Book Now</a>
+		</div>
+		</div>
+		<div class="col-sm-3 ">
+		<div class="pricing-item text-center box">
+		    <h5>Sedan</h5>
+		  <p>Swift Dzire or Similar<p>
+		  <img src="img/swift.png" class="img-fluid">
+		  <div>
+		    <p><span>AC </span> | <span> 4 Seats </span> |  <span> luggage </p>
+		  </div>
+		   <div>
+		    <h5>₹11 <span> per KM for HatchBack</span></h5>
+			<h5>₹250 <span>Driver Allowances per Day</span></h5>
+			<h5><span>₹150 </span>Charges for per Night Halt</h5>
+		  </div>
+		  <a href="#" data-toggle="modal" data-target="#myPrice1" class="btn-get">Book Now</a>
+		  </div>
+		</div>
+		<div class="col-sm-3 ">
+		<div class="pricing-item text-center box">
+		   <h5>SUV</h5>
+		  <p>Innova or Similar<p>
+		  <img src="img/xylo.png" class="img-fluid">
+		  <div>
+		    <p><span>AC </span> | <span> 7 Seats </span> |  <span> luggage </p>
+		  </div>
+		  <div>
+		    <h5>₹15 <span> per KM for HatchBack</span></h5>
+			<h5>₹250 <span>Driver Allowances per Day</span></h5>
+			<h5><span>₹150 </span>Charges for per Night Halt</h5>
+		  </div>
+
+		  
+		 <a data-toggle="modal" data-target="#myPrice1" class="btn-get">Book Now</a>
+		</div>
+		</div>
+		<div class="col-sm-3">
+		 <div class="pricing-item text-center box">
+		 <h5>Tempo</h5>
+		  <p>Traveller or Similar<p>
+		  <img src="img/traveller.png" class="img-fluid">
+		  <div>
+		    <p><span>AC </span> | <span> 14 Seats </span> |  <span> luggage </p>
+		  </div>
+		  <div>
+		    <h5>₹20 <span> per KM for HatchBack</span></h5>
+			<h5>₹250 <span>Driver Allowances per Day</span></h5>
+			<h5><span>₹150 </span>Charges for per Night Halt</h5>
+		  </div>
+		  
+		 <a  data-toggle="modal" data-target="#myPrice1" class="btn-get">Book Now</a>
+		  </div>
+		</div>
+	</div>
+	
+	</div>
+    </div>
+    <div id="menu1" class="container-fluid tab-pane fade"><br>
+  
+	<div class="col-sm-12 p-0">
+	<div class="row align-items-center">
+	    <div class="col-sm-3">
+		<div class="pricing-item text-center box">
+		  <h5>HatchBack</h5>
+		  <p>Indica or Similar<p>
+		  <img src="img/tata-Indica.png" class="img-fluid">
+		  <div>
+		    <p><span>AC </span> | <span> 4 Seats </span> |  <span> luggage </p>
+		  </div>
+		  <div>
+		    <h5><span>4 Hrs / 40 kms </span>@ ₹700</h5>
+			<h5><span>8 Hrs / 80 kms </span>@ ₹1200</h5>
+			<h5><span>12 Hrs / 100 kms </span>@ ₹1750</h5>
+		  </div>
+		 
+		  <a  data-toggle="modal" data-target="#myPrice1" class="btn-get">Book Now</a>
+		</div>
+		</div>
+		<div class="col-sm-3 ">
+		<div class="pricing-item text-center box">
+		    <h5>Sedan</h5>
+		  <p>Swift Dzire or Similar<p>
+		  <img src="img/swift.png" class="img-fluid">
+		  <div>
+		    <p><span>AC </span> | <span> 4 Seats </span> |  <span> luggage </p>
+		  </div>
+		   <div>
+		    <h5><span>4 Hrs / 40 kms </span>@ ₹800</h5>
+			<h5><span>8 Hrs / 80 kms </span>@ ₹1300</h5>
+			<h5><span>12 Hrs / 100 kms </span>@ ₹1900</h5>
+		  </div>
+		  <a data-toggle="modal" data-target="#myPrice1" class="btn-get">Book Now</a>
+		  </div>
+		</div>
+		<div class="col-sm-3 ">
+		<div class="pricing-item text-center box">
+		   <h5>SUV</h5>
+		  <p>Innova or Similar<p>
+		  <img src="img/xylo.png" class="img-fluid">
+		  <div>
+		    <p><span>AC </span> | <span> 7 Seats </span> |  <span> luggage </p>
+		  </div>
+		  <div>
+		    <h5><span>4 Hrs / 40 kms </span>@ ₹1300</h5>
+			<h5><span>8 Hrs / 80 kms </span>@ ₹1900</h5>
+			<h5><span>12 Hrs / 100 kms </span>@ ₹3000</h5>
+		  </div>
+
+		  
+		 <a data-toggle="modal" data-target="#myPrice1" class="btn-get">Book Now</a>
+		</div>
+		</div>
+		<div class="col-sm-3">
+		 <div class="pricing-item text-center box">
+		 <h5>Tempo</h5>
+		  <p>Traveller or Similar<p>
+		  <img src="img/traveller.png" class="img-fluid">
+		  <div>
+		    <p><span>AC </span> | <span> 14 Seats </span> |  <span> luggage </p>
+		  </div>
+		  <div>
+		    <h5><span>4 Hrs / 40 kms </span> - NA </h5>
+			<h5><span>8 Hrs / 80 kms </span>@ ₹3300</h5>
+			<h5><span>12 Hrs / 100 kms </span>@ ₹3900</h5>
+		  </div>
+		  
+		 <a  data-toggle="modal" data-target="#myPrice1" class="btn-get">Book Now</a>
+		  </div>
+		</div>
+	</div>
+	
+	</div>
+    </div>
+    
+  </div>
+
+
+</div>
+ <div class="col-sm-10 offset-sm-1">
+     <h2 class="text-center pt-4">Tour Packages</h2>
+    <div class="row">
+      <div class="grid">
+					
+					<a href="tour-packages-1.html" style="color:white;"><figure class="effect-apollo">
+						<img src="img/madurai.jpg" class="img-fluid" alt="meenakshi"/>
+						<figcaption>
+							<h2><span>Madurai</span></h2>
+							<p>Madurai<br> 
+							1 Day <span class="view-more">View more</span></p>
+						</figcaption>			
+					</figure></a>
+					<a href="tour-packages-2.html"> 
+					<figure class="effect-apollo">
+						<img src="img/rameshwaram.jpg" class="img-fluid" alt="rameshwaram"/>
+						<figcaption>
+							<h2><span>Rameshwaram</span></h2>
+							<p>Madurai-Rameshwaram<br> 
+							2 Days / 1 Night
+							<span class="view-more">View more</span></p>
+							
+						</figcaption>			
+					</figure>
+					</a>
+					<a href="tour-packages-3.html"> 
+					<figure class="effect-apollo">
+						<img src="img/kanyakumari.jpg" class="img-fluid" alt="kanyakumari"/>
+						<figcaption>
+							<h2><span>Kanyakumari</span></h2>
+							<p>Madurai-Rameshwaram-Kanyakumari<br> 
+							 3 Days / 2 Nights <span class="view-more">View more</span></p>
+							
+						</figcaption>			
+					</figure>
+					</a>
+					<a href="tour-packages-4.html"> 
+					<figure class="effect-apollo">
+						<img src="img/kodaikanal.jpg" class="img-fluid" alt="meenakshi"/>
+						<figcaption>
+							<h2><span>Madurai-Kodaikanal</span></h2>
+							<p>Kodaikanal<br> 
+							2 Days / 1 Night 
+							<span class="view-more"> View more</span></p>
+						</figcaption>			
+					</figure>
+				
+  </div>
+    </div>
+  </div>
+  
+   <div class="col-sm-6 offset-sm-3 black form-mobile fix-con">
+
+        <form class="contact-form" action="https://formspree.io/enquiry.rbctravels@gmail.com" method="POST">
+
+
+          <h2 class="text-center pt-2 pb-2">Contact Form</h2>
+          <div class="form-group">
+            <input type="text" class="form-control" id="fname" name="fname" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Mobile Number">
+          </div>
+
+          <div class="form-group">
+            <select class="form-control" name="vehicle_type">
+              <option value="">Select Vehicle</option>
+              <option value="HatchBack">HatchBack</option>
+              <option value="Sedan">Sedan</option>
+              <option value="SUV">SUV</option>
+              <option value="Tempo">Tempo</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <textarea class="form-control" type="textarea" id="message_to_send" name="quote" id="quote" placeholder="Message" maxlength="140"
+              rows="3"></textarea>
+          </div>
+
+          <div class="">
+
+            <!-- <button type="submit" id="submit" name="submit" class="col-sm-6 offset-sm-3 text-center btn btn-primary">Submit</button> -->
+            <input type="submit" class="col-sm-6 offset-sm-3 col-6 offset-3 text-center btn btn-primary" value="Send">
+          </div>
+        </form>
+      </div>
+  <!-- Footer Widget section -->
+            <div class="container-fluid    p-btm-80 nw-ftr mt-5">
+
+                <div class="container">
+                    <div class="row wow animated slideInUp">
+                        
+                            <div class="col-md-3">
+                                <div class="weidget-item">
+                                    <h4 class="text-white">Company</h4>
+                                    <ul class="m-top-20">
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#">About us</a></li>
+                                        <li><a href="#">Pricing</a></li>
+                                        <li><a href="#">Contact us</a></li>
+                                    </ul>
+                                </div>
+                            </div><!-- End off col-sm-3 -->
+
+                            <div class="col-md-3 ">
+                                <div class="weidget-item"> 
+                                    <h4 class="text-white">Quick Links</h4>
+                                    <ul class="m-top-20">
+                                        <li><a href=""> Designers</a></li>
+                                        <li><a href=""> Pricing plan</a></li>
+                                        <li><a href=""> Services</a></li>
+                                        <li><a href=""> Download</a></li>
+                                    </ul>
+                                </div>
+                            </div><!-- End off col-sm-3 -->
+
+                            <div class="col-md-3 ">
+                                <div class="weidget-item"> 
+                                    <h4 class="text-white">Conditions</h4>
+                                    <ul class="">
+                                        <li><a href=""> Online support</a></li>
+                                        <li><a href=""> Privacy</a></li>
+                                        <li><a href=""> Terms</a></li>
+                                        <li><a href=""> Policy</a></li>
+                                    </ul>
+                                </div>
+                            </div><!-- End off col-sm-3 -->
+
+                            <div class="col-md-3">
+                                <div class="weidget-item">
+                                    <h4 class="text-white">Get connected</h4>
+                                    <ul class="socail ">
+                                        <li><a href=""><span class="social_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></span></a></li>
+                                        <li><a href=""><span class="social_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
+                                        <li><a href=""><span class="social_googleplus"><i class="fa fa-google-plus" aria-hidden="true"></i></span></a></li>
+                                    </ul>
+                                </div>
+                            </div><!-- End off col-md-4 -->
+                          
+                    </div><!-- End off main widget-->
+
+                </div><!-- End off container -->
+            </div><!-- End off footer widget Section -->
+
+
+            <!--Footer section-->
+            <footer class="container-fluid footer  foot-copy">
+              
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="hv2-main-footer wow fadeInUp">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="copyright-text text-center">
+                                             <p class="text-white">Made with  by <a class="text-white" href="#" target="_blank">WebCastillo</a> 2018. All Rights Reserved</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer><!-- End off footer Section--> 
+			<div class="whatsapp">
+<a href="https://api.whatsapp.com/send?phone=919360399003&amp;text= Hi RBC Travels..." class=""><img src="img/whatsapp.png"     alt="" class=""></a>
+</div>
+ <!--build:js js/wow.min.js -->
+ 
+ 
+ <div class="modal fade" id="myPrice1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title text-center ">Contact Form</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">         
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-sm-12 fix-con">
+
+        <form class="contact-form" action="https://formspree.io/enquiry.rbctravels@gmail.com" method="POST">
+
+
+          <!-- <h2 class="text-center pt-2 pb-2">Contact Form</h2> -->
+          <div class="form-group">
+            <input type="text" class="form-control" id="fname" name="fname" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Mobile Number">
+          </div>
+
+          <!-- <div class="form-group"> -->
+            <!-- <select class="form-control" name="vehicle_type"> -->
+              <!-- <option value="">Select Vehicle</option> -->
+              <!-- <option value="HatchBack">HatchBack</option> -->
+              <!-- <option value="Sedan">Sedan</option> -->
+              <!-- <option value="SUV">SUV</option> -->
+              <!-- <option value="Tempo">Tempo</option> -->
+            <!-- </select> -->
+          <!-- </div> -->
+
+          <!-- <div class="form-group"> -->
+            <!-- <textarea class="form-control" type="textarea" id="message_to_send" name="quote" id="quote" placeholder="Message" maxlength="140" -->
+              <!-- rows="3"></textarea> -->
+          <!-- </div> -->
+
+          <div class="">
+
+            <!-- <button type="submit" id="submit" name="submit" class="col-sm-6 offset-sm-3 text-center btn btn-primary">Submit</button> -->
+            <input type="submit" class="col-sm-6 offset-sm-3 col-6 offset-3 text-center btn btn-primary" value="Send">
+          </div>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+  
+  </div>
+  </div>
+   </div>
+  </div>
+    <script src="lib/wow/wow.min.js "></script>
+    <!-- endbuild -->
+
+     <!--build:js js/magnific.min.js -->
+    <script src="lib/magnific-popup/magnific-popup.min.js "></script> 
+    <!-- endbuild -->
+
+     <!--build:js js/superfish.min.js -->
+    <script src="lib/superfish/superfish.min.js "></script> 
+    <!-- endbuild -->
+
+    <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script> 
+
+    <!--build:js js/main.min.js -->
+    <script src="js/main.js "></script>
+
+<script type="text/javascript">
+   $(function () {
+  $("#datepicker-1,#datepicker-2").datepicker({ 
+        autoclose: true, 
+        todayHighlight: true
+  }).datepicker('update', new Date());
+});
+ /* Demo purposes only */
+  $("figure").mouseleave(
+    function() {
+      $(this).removeClass("hover");
+    }
+  );
+</script>
+
+</body>
+</html>

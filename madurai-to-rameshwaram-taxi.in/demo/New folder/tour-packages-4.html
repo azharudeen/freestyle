@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+    <title>RBC Travels</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+   
+
+    <!-- Favicons -->
+     <link rel="shortcut icon" type="image/png" href="" alt="ceatr Logo" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+     
+    <!-- Bootstrap CSS File -->
+    <!--build:css css/bootsrap.min.css -->
+   
+    <!-- endbuild -->
+
+     <!--build:css css/animate.min.css -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <!-- endbuild -->
+
+     <!--build:css css/fontawesome.min.css -->
+   
+    <!-- endbuild -->
+    
+     <!--build:css css/magnific.min.css -->
+    <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <!-- endbuild -->
+
+    <!--build:css css/styles.min.css -->
+	<link href="css/styles.css" rel="stylesheet">
+     <!-- endbuild -->
+
+    <!--build:css css/plugins.min.css -->
+	<link href="css/plugins.css" rel="stylesheet">
+    <!-- endbuild -->
+
+    <!--build:css css/slick.min.css -->
+	<link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+     <!-- endbuild -->
+
+  
+   <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+     
+     
+  <script src="js/javascript.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css"
+  />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125115139-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-125115139-1');
+</script>
+<meta name="google-site-verification" content="eOw4g3YSmwFfo093nawcSbPPnfYfxP8eAp5cuZE6apU" />
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #map-canvas {
+      height: 100%;
+      width: 50%;
+    }
+
+    #content-pane {
+      float: right;
+      width: 48%;
+      padding-left: 2%;
+    }
+
+    #outputDiv {
+      font-size: 11px;
+    }
+
+    .fix{ 
+      position: fixed;
+      right: 7%;
+      top: 27%;
+    }
+
+    .mad-pack h4 {
+      font-size: 1rem;
+      height: 40px;
+      align-items: center;
+      display: flex;
+      text-align: center !important;
+    }
+
+    .mad-pack div {
+      height: 240px;
+    }
+
+    .mad-pack img {
+      height: 150px;
+      width: 100%;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("user_1Atr8eLgw0JL70SNnIk1f");
+    })();
+  </script>
+
+  <script>
+    function sendEmail() {
+      var fname = document.getElementById('fname').value;
+      var email = document.getElementById('email').value;
+      var msgToSend = document.getElementById('message_to_send').value;
+      var service_id = 'default_service';
+      var template_id = 'template_Ph8Wr470';
+      var template_params = {
+        name: fname,
+        reply_email: email,
+        message: msgToSend
+      };
+
+      emailjs.send(service_id, template_id, template_params);
+    }
+  </script>
+
+</head>
+
+<body>
+
+
+ <div class="call-mail">
+ 	    <div class="container">
+ 	    	<div class="row">
+            <div class="col-sm-12 col-md-6 offset-md-6">
+                <div class="search text-right float-right">
+                        <ul class="nav navbar-upper">
+                  
+                   <li><a href="mailto:rbctravelsmadurai@gmail.com"><i class="fa fa-envelope-o c-m" aria-hidden="true"></i>&nbsp;info@rbctravels.in</a></li>
+                    <li><a href="tel:+91 93603 99003"><i class="fa fa-phone c-m" aria-hidden="true" ></i>&nbsp;+91 93603 99003</a></li>
+               </ul>
+                 </div>
+            </div>
+           </div>
+        </div>
+    </div>
+	<header id="header">
+	    
+        <div class="container">
+            <div id="logo" class="pull-left">
+                <a href="index.html">rbc travels</a>
+            </div>
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                   
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li class="active"><a href="packages.html">Tour Packages</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <!-- #nav-menu-container -->
+        </div>
+    </header>
+  <div class="container-fluid" style="margin-top:30px">
+    <div class="row">
+
+     <div class="col-sm-7 offset-sm-1">
+     <h2 class="text-center pt-2 pb-2">Tour Package Details	</h2>
+        
+	     <div class="col-sm-12">
+		 <h3 class="text-center pt-2 pb-2"><p>Madurai-Kodaikanal<br> 
+							Sightseeing ( 2 Days / 1 Night  ) Package</h3>
+         <h4 class="text-center">Kodaikanal</h4>
+	      <div class="row mad-pack">
+		   
+            <div class="col-sm-4">
+			  <h4 class="  ">1. Kurinji Andavar Temple</h4>
+			  <img src="img/kurinji-andavar-temple.jpg" class="img-fluid">
+			</div>
+			<div class="col-sm-4">
+			   <h4 class="  ">2. Bryant Park</h4>
+			   <img src="img/brant-park.jpg" class="img-fluid">
+			</div>
+			<div class="col-sm-4">
+			  <h4 class="  ">3. Coackers’walk</h4>
+			  <img src="img/coakers-walk.jpg" class="img-fluid">
+			</div>
+			
+			<div class="col-sm-4">
+			   <h4 class="  ">4. Pillar rock</h4>
+			  <img src="img/pillar-rocks.jpg" class="img-fluid">
+			</div>
+			
+			<div class="col-sm-4">
+			  <h4 class="  ">5. Suicide Point</h4>
+			  <img src="img/suicide-point.jpg" class="img-fluid">
+			</div>
+			<div class="col-sm-4">
+			   <h4 class="  ">6. Silver Falls</h4>
+			  <img src="img/silver-cascade-falls.jpg" class="img-fluid">
+			</div>
+			<div class="col-sm-4">
+			  <h4 class="  ">7. Bear – Shola Falls</h4>
+			  <img src="img/bear-shola-falls.jpg" class="img-fluid">
+			</div>
+			
+		  </div>
+		  
+		   </div>
+      </div>
+  
+ 
+      <div class="col-sm-3 fix-con">
+
+        <form class="contact-form" action="https://formspree.io/enquiry.rbctravels@gmail.com" method="POST">
+
+
+          <h2 class="text-center pt-2 pb-2">Contact Form</h2>
+          <div class="form-group">
+            <input type="text" class="form-control" id="fname" name="fname" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Mobile Number">
+          </div>
+
+          <div class="form-group">
+            <select class="form-control" name="vehicle_type">
+              <option value="">Select Vehicle</option>
+              <option value="HatchBack">HatchBack</option>
+              <option value="Sedan">Sedan</option>
+              <option value="SUV">SUV</option>
+              <option value="Tempo">Tempo</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <textarea class="form-control" type="textarea" id="message_to_send" name="quote" id="quote" placeholder="Message" maxlength="140"
+              rows="3"></textarea>
+          </div>
+
+          <div class="">
+
+            <!-- <button type="submit" id="submit" name="submit" class="col-sm-6 offset-sm-3 text-center btn btn-primary">Submit</button> -->
+            <input type="submit" class="col-sm-6 offset-sm-3 col-6 offset-3 text-center btn btn-primary" value="Send">
+          </div>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+  </div>
+<!-- Footer Widget section -->
+            <div class="container-fluid    p-btm-80 nw-ftr mt-5">
+
+                <div class="container">
+                    <div class="row wow animated slideInUp">
+                        
+                            <div class="col-md-3">
+                                <div class="weidget-item">
+                                    <h4 class="text-white">Company</h4>
+                                    <ul class="m-top-20">
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#">About us</a></li>
+                                        <li><a href="#">Pricing</a></li>
+                                        <li><a href="#">Contact us</a></li>
+                                    </ul>
+                                </div>
+                            </div><!-- End off col-sm-3 -->
+
+                            <div class="col-md-3 ">
+                                <div class="weidget-item"> 
+                                    <h4 class="text-white">Quick Links</h4>
+                                    <ul class="m-top-20">
+                                        <li><a href=""> Designers</a></li>
+                                        <li><a href=""> Pricing plan</a></li>
+                                        <li><a href=""> Services</a></li>
+                                        <li><a href=""> Download</a></li>
+                                    </ul>
+                                </div>
+                            </div><!-- End off col-sm-3 -->
+
+                            <div class="col-md-3 ">
+                                <div class="weidget-item"> 
+                                    <h4 class="text-white">Conditions</h4>
+                                    <ul class="">
+                                        <li><a href=""> Online support</a></li>
+                                        <li><a href=""> Privacy</a></li>
+                                        <li><a href=""> Terms</a></li>
+                                        <li><a href=""> Policy</a></li>
+                                    </ul>
+                                </div>
+                            </div><!-- End off col-sm-3 -->
+
+                            <div class="col-md-3">
+                                <div class="weidget-item">
+                                    <h4 class="text-white">Get connected</h4>
+                                    <ul class="socail ">
+                                        <li><a href=""><span class="social_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></span></a></li>
+                                        <li><a href=""><span class="social_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
+                                        <li><a href=""><span class="social_googleplus"><i class="fa fa-google-plus" aria-hidden="true"></i></span></a></li>
+                                    </ul>
+                                </div>
+                            </div><!-- End off col-md-4 -->
+                          
+                    </div><!-- End off main widget-->
+
+                </div><!-- End off container -->
+            </div><!-- End off footer widget Section -->
+
+
+            <!--Footer section-->
+            <footer class="container-fluid footer  foot-copy">
+              
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="hv2-main-footer wow fadeInUp">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="copyright-text text-center">
+                                             <p class="text-white">Made with  by <a class="text-white" href="#" target="_blank">WebCastillo</a> 2018. All Rights Reserved</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer><!-- End off footer Section--> 
+			 <div class="whatsapp">
+<a href="https://api.whatsapp.com/send?phone=919360399003&amp;text= Hi RBC Travels..." class=""><img src="img/whatsapp.png"     alt="" class=""></a>
+</div>
+ <!--build:js js/wow.min.js -->
+    <script src="lib/wow/wow.min.js "></script>
+    <!-- endbuild -->
+
+     <!--build:js js/magnific.min.js -->
+    <script src="lib/magnific-popup/magnific-popup.min.js "></script> 
+    <!-- endbuild -->
+
+     <!--build:js js/superfish.min.js -->
+    <script src="lib/superfish/superfish.min.js "></script> 
+    <!-- endbuild -->
+
+    <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script> 
+
+    <!--build:js js/main.min.js -->
+    <script src="js/main.js "></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#datepicker-1,#datepicker-2").datepicker({
+        autoclose: true,
+        todayHighlight: true
+      }).datepicker('update', new Date());
+    });
+
+  </script>
+
+</body>
+
+</html>
